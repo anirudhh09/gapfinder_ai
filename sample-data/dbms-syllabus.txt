@@ -1,0 +1,41 @@
+DBMS SYLLABUS - Database Management Systems (Semester 4)
+
+Unit 1 Introduction to DBMS
+- Data, database and DBMS; file system versus DBMS
+- Three-schema architecture
+- Physical and logical data independence
+
+Unit 2 ER Model
+- Entities, attributes and relationships
+- Cardinality and participation constraints
+- Weak entities and mapping ER to tables
+
+Unit 3 Relational Model and Keys
+- Relations, tuples and attributes
+- Super key, candidate key, primary key, foreign key
+- Entity integrity, referential integrity and domain constraints
+
+Unit 4 Relational Algebra
+- Selection, projection, rename
+- Union, difference, intersection, Cartesian product
+- Joins
+
+Unit 5 SQL Queries
+- DDL, DML, DCL and TCL commands
+- Joins, GROUP BY, HAVING and aggregate functions
+- Subqueries; DELETE versus TRUNCATE versus DROP
+
+Unit 6 Normalization
+- Functional dependencies and anomalies
+- 1NF, 2NF, 3NF and BCNF
+- Lossless and dependency-preserving decomposition
+
+Unit 7 Transactions and ACID
+- Transaction concept and states
+- ACID properties
+- Serializable schedules
+
+Unit 8 Concurrency Control and Deadlocks
+- Lost update, dirty read and unrepeatable read
+- Shared and exclusive locks, two-phase locking
+- Deadlock detection and recovery

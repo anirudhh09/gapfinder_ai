@@ -1,0 +1,13 @@
+DBMS PAST PAPER 2024 - End Semester Examination
+Time: 3 hours. Answer all questions.
+
+Q1. Differentiate between a file system and a DBMS. (4 marks)
+Q2. Explain physical and logical data independence. (4 marks)
+Q3. What is a weak entity? How is it identified? (3 marks)
+Q4. Distinguish between a super key, a candidate key and a primary key. (4 marks)
+Q5. Write the relational algebra expression for the intersection of two relations using only difference. (3 marks)
+Q6. Differentiate WHERE and HAVING with an example. (4 marks)
+Q7. What is the difference between DELETE, TRUNCATE and DROP? (3 marks)
+Q8. Define 3NF and BCNF. Give a relation that is in 3NF but not in BCNF. (6 marks)
+Q9. Explain the ACID properties with a banking example. (6 marks)
+Q10. What is two-phase locking? Does it prevent deadlock? How is deadlock detected? (6 marks)

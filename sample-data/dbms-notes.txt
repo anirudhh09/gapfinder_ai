@@ -1,0 +1,28 @@
+1. Introduction to DBMS
+A database is an organized collection of related data. A DBMS is software that lets users define, create, query, update and administer a database. Compared with a file system, a DBMS reduces data redundancy, avoids inconsistency, supports concurrent access, provides security and offers backup and recovery.
+The three-schema architecture separates the physical (internal) schema, the logical (conceptual) schema and the view (external) schema. Physical data independence means the physical storage can change without changing the logical schema. Logical data independence means the logical schema can change without rewriting application views. Logical independence is harder to achieve than physical independence.
+
+2. ER Model
+The Entity-Relationship model describes data as entities, attributes and relationships. An entity is a distinguishable object, such as a Student. Attributes can be simple, composite, multivalued or derived. A relationship connects entities, and its cardinality can be one-to-one, one-to-many or many-to-many. Participation can be total or partial.
+A weak entity has no key of its own and depends on an owner entity through an identifying relationship. It is identified by the owner's key together with its own partial key. In an ER diagram entities are drawn as rectangles, attributes as ovals and relationships as diamonds. A many-to-many relationship becomes a separate table when mapped to the relational model.
+3. Relational Model and Keys
+The relational model stores data in relations (tables) made of tuples (rows) and attributes (columns). A super key is any set of attributes that uniquely identifies a tuple. A candidate key is a minimal super key. The primary key is the candidate key chosen to identify tuples, and it cannot be NULL.
+A foreign key is an attribute in one relation that refers to the primary key of another relation and enforces referential integrity. Entity integrity requires that primary key values are never NULL. Domain constraints restrict the values an attribute can hold. A relation can have many candidate keys but only one primary key.
+
+4. Relational Algebra
+Relational algebra is a procedural query language whose operations take relations and return relations. Selection (sigma) picks rows that satisfy a condition. Projection (pi) picks columns and removes duplicates. Union and difference need union-compatible relations, which have the same number of attributes with matching domains.
+The Cartesian product pairs every tuple of one relation with every tuple of another. A natural join combines the Cartesian product with selection on equal common attributes and removes the duplicate columns. Rename (rho) gives a new name to a relation or attribute. Intersection can be written using difference: R intersect S = R - (R - S).
+5. SQL Queries
+SQL commands are grouped as DDL (CREATE, ALTER, DROP), DML (INSERT, UPDATE, DELETE, SELECT), DCL (GRANT, REVOKE) and TCL (COMMIT, ROLLBACK). WHERE filters rows before grouping, while HAVING filters groups after GROUP BY. Aggregate functions are COUNT, SUM, AVG, MIN and MAX.
+An INNER JOIN returns only matching rows; a LEFT OUTER JOIN returns all rows from the left table and NULL for missing matches on the right. A subquery is a query nested inside another query. DELETE removes the rows selected by a WHERE clause, TRUNCATE removes all rows, and DROP removes the table itself. COUNT(*) counts all rows, but COUNT(column) ignores NULL values.
+
+6. Normalization
+Normalization organizes tables to reduce redundancy and avoid insertion, update and deletion anomalies. A functional dependency X -> Y means each value of X determines exactly one value of Y. A table is in 1NF if every attribute holds atomic values.
+A table is in 2NF if it is in 1NF and no non-prime attribute depends on only part of a candidate key (no partial dependency). It is in 3NF if it is in 2NF and no non-prime attribute depends transitively on the key. BCNF is stricter: for every functional dependency X -> Y, X must be a super key. Every BCNF relation is in 3NF, but not every 3NF relation is in BCNF. A decomposition should be lossless and, ideally, dependency preserving.
+7. Transactions and ACID
+A transaction is a logical unit of work made of one or more operations that must run as a whole. The ACID properties are Atomicity (all or nothing), Consistency (a transaction moves the database from one valid state to another), Isolation (concurrent transactions do not interfere with each other) and Durability (committed changes survive failures).
+The recovery manager ensures atomicity and durability, while the concurrency control manager ensures isolation. Transaction states are active, partially committed, committed, failed and aborted. A failed transaction is rolled back to restore the database to its earlier state. A schedule is serializable if its result equals that of some serial schedule.
+
+8. Concurrency Control and Deadlocks
+Concurrency control makes sure simultaneous transactions keep the database consistent. Without it, problems such as lost update, dirty read and unrepeatable read can occur. A dirty read happens when a transaction reads data written by another transaction that has not yet committed.
+Lock-based protocols use shared locks (S) for reading and exclusive locks (X) for writing. Two-phase locking (2PL) has a growing phase, where locks are acquired, and a shrinking phase, where locks are released. Once a transaction releases a lock it cannot acquire a new one. 2PL guarantees serializability but does not prevent deadlock. A deadlock occurs when transactions wait for each other in a cycle. It can be detected with a wait-for graph and resolved by aborting a victim transaction.
